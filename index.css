@@ -1,0 +1,110 @@
+body
+{
+  background-image:url("back.jpg");
+  background-size: cover;
+	background-repeat: no-repeat;
+	
+}
+
+.register
+{
+	text-align: center;
+	padding-top: 100px;
+	
+	
+}
+input[type=text], input[type=password] , input[type=email] , input[type=number]{
+  width: 20%;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 15px;
+  
+  
+}
+
+
+
+
+
+#dob
+{
+	
+  width: 20%;
+  padding: 20px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+   margin-top: 20px;
+   border-radius: 15px;
+}
+
+button {
+  background-color: black;
+  color: white;
+  padding: 14px 20px;
+  margin-right: -92px;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+  opacity: 0.9;
+  border-radius: 25px;
+}
+
+button:hover {
+  opacity:3;
+}
+
+#names
+{
+	margin-right: 36px;
+}
+
+#db
+{
+	margin-right: 45px;
+}
+
+#help{
+
+    margin-left: 100px;
+	font-family: Snell Roundhand, cursive;
+}
+
+#eml
+{
+	margin-right: 60px;
+}
+
+#pd
+{
+	margin-right: 36px;
+}
+
+#cnt
+{
+	margin-right: 45px;
+}
+
+#rg
+{
+	font-family: Apple Chancery, cursive;
+}
+
+@media only screen and (max-width: 620px)
+{
+	input[type=text], input[type=password] , input[type=email] , input[type=number]{
+		width: 50%;
+	}
+	#dob{
+		width: 50%;
+	}
+	
+	#btn
+	{
+		width: 60%;
+	}
+}

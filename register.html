@@ -1,0 +1,128 @@
+<html>
+<head>
+<title>Register with US</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="index.css">
+	<link rel="shortcut icon" type="img/x-icon" href="fevicon.png"/>
+</head>
+<body>
+<div class="register">
+	
+		
+		
+			<h1 id="rg">Register With Us.!</h1>
+			<label id="names">Username </label>
+			<input type="text" placeholder="Username" id="naam" required /><br>
+			
+			<label id="eml">Email </label>
+			<input type="email" placeholder="Your email ID" id="mail" required /><br>
+			
+			<label id="pd">Password </label>
+			<input type="password" placeholder="Password" id="psw" onclick="pass()"/><br> 
+			<p id= help ></p>
+			
+			<label id="cnt">Contact </label>
+			<input type="number" placeholder="Phone number" id="conct" required /><br>
+			
+			<label id="db">D.O.B </label>
+			<input type="date"  id="dob" required /><br>
+			
+			<p id="demo"></p>
+			
+			<button type ="submit" id= btn onclick="use()" >Submit</button>
+		
+	
+</div>
+ 
+ 
+<script>
+
+
+
+
+
+function use(user_name, user_mail, pwd, user_cnt, user_db)
+
+
+{
+var user_name = document.getElementById("naam").value;
+var user_mail = document.getElementById("mail").value;
+var pwd = document.getElementById("psw").value;
+var user_cnt = document.getElementById("conct").value;
+var  user_db = document.getElementById("dob").value;
+
+
+//Username validation
+if (user_name.length == 0)
+{
+	alert("Username is required");
+	return;
+	document.getElementById("naam").value= '';
+}
+
+
+//password validation
+
+if (pwd.length <= 8)
+{
+  alert("Password should be 8 characters long ");
+	return false;
+ }
+ 
+ //contact validation
+ 
+ if( user_cnt.length != 10)
+ {	
+	alert("Invalid Contact number");
+ }
+
+//email validation
+var mailformat = (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
+if(user_mail.match(mailformat))
+{
+	
+	
+	if(document.getElementById("mail").value in localStorage) // key validation
+	{
+		alert("Email already register \nPlease use other email");
+		return;
+	}
+	else
+	{
+			localStorage.setItem(user_mail, JSON.stringify({"Names": user_name,"Emails": user_mail,"Passwords": pwd ,"Contacts": user_cnt ,"DOBS": user_db}));
+			alert("Succefully Register");
+			document.getElementById("naam").value= '';
+			document.getElementById("mail").value='';
+			document.getElementById("psw").value='';
+			document.getElementById("conct").value='';
+			document.getElementById("dob").value='';
+			
+	}
+	
+}
+else
+{
+	alert("You have entered an invalid email address!");
+	return false;
+}
+
+
+
+
+	
+
+}
+
+function pass()
+{
+	var pwd = document.getElementById("psw").value;
+	
+	var x = "Password must be greater or equal to 8 characters";
+	document.getElementById("help").innerHTML = x;
+
+}
+
+
+</script>
+</body>
+</html>
