@@ -61,6 +61,21 @@ if (user_name.length == 0)
 }
 
 
+
+
+
+//email validation
+var mailformat = (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
+if(user_mail.match(mailformat))
+{	
+	
+}
+else
+{
+	alert("You have entered an invalid email address!");
+	return false;
+}
+
 //password validation
 
 if (pwd.length <= 8)
@@ -68,20 +83,37 @@ if (pwd.length <= 8)
   alert("Password should be 8 characters long ");
 	return false;
  }
- 
- //contact validation
- 
- if( user_cnt.length != 10)
- {	
-	alert("Invalid Contact number");
+
+
+	//contact validation
+ if(user_cnt < 0)
+ {
+	alert("Negative number is not accepted");
+	return;
+	
  }
 
-//email validation
-var mailformat = (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
-if(user_mail.match(mailformat))
-{
-	
-	
+  if( user_cnt.length != 10 )
+ {	
+	alert("Invalid Contact number");
+	return;
+ }
+
+
+ 
+ 
+ 
+ //dob validation
+ 
+ if(document.getElementById("dob").value == "")
+ {
+	alert("Please select the D.O.B");
+	return;
+ }
+ 
+ 
+ 
+ 
 	if(document.getElementById("mail").value in localStorage) // key validation
 	{
 		alert("Email already register \nPlease use other email");
@@ -98,18 +130,7 @@ if(user_mail.match(mailformat))
 			document.getElementById("dob").value='';
 			
 	}
-	
-}
-else
-{
-	alert("You have entered an invalid email address!");
-	return false;
-}
-
-
-
-
-	
+ 
 
 }
 
@@ -117,7 +138,7 @@ function pass()
 {
 	var pwd = document.getElementById("psw").value;
 	
-	var x = "Password must be greater or equal to 8 characters";
+	var x = " HELP: *Password must be greater or equal to 8 characters";
 	document.getElementById("help").innerHTML = x;
 
 }
